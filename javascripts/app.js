@@ -2,6 +2,8 @@
 // ======================
 var rover = {
 	direction : "N"
+	positionX : 0,
+	positionY : 0
 }
 
 // ======================
