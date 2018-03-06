@@ -1,12 +1,13 @@
 // Rover Object Goes Here
-// ======================
+// ========1 iteracion=======
 var rover = {
-	direction : "N"
-	positionX : 0,
-	positionY : 0
+	direction : "N",
+	x : 0,
+	y : 0,
+	position : [0,0]
 }
 
-// ======================
+// =======2 iteracion=======
 function turnLeft(rover){
 	switch(rover.direction) {
 	case"N":
@@ -42,8 +43,10 @@ function turnRight(rover){
 	}
   console.log("turnRight was called!");
 }
+
+// =======3 iteracion=======
 //function createGrid(){
-var newGrid = [ 				[0,0],[0,1],[0,2],[0,3],[0,4],[0,5],[0,6],[0,7],[0,8],[0,9],
+/*var newGrid = [ [0,0],[0,1],[0,2],[0,3],[0,4],[0,5],[0,6],[0,7],[0,8],[0,9],
 								[1,0],[1,1],[1,2],[1,3],[1,4],[1,5],[1,6],[1,7],[1,8],[1,9],
 								[2,0],[2,1],[2,2],[2,3],[2,4],[2,5],[2,6],[2,7],[2,8],[2,9],
 								[3,0],[3,1],[3,2],[3,3],[3,4],[3,5],[3,6],[3,7],[3,8],[3,9],
@@ -53,10 +56,11 @@ var newGrid = [ 				[0,0],[0,1],[0,2],[0,3],[0,4],[0,5],[0,6],[0,7],[0,8],[0,9],
 								[7,0],[7,1],[7,2],[7,3],[7,4],[7,5],[7,6],[7,7],[7,8],[7,9],
 								[8,0],[8,1],[8,2],[8,3],[8,4],[8,5],[8,6],[8,7],[8,8],[8,9],
 								[9,0],[9,1],[9,2],[9,3],[9,4],[9,5],[9,6],[9,7],[9,8],[9,9],
-							]	
+							]	*/
 
 //Funcion para crear Grid
-/*
+
+var grid = createGrid2D(10,10,0);
 
 function createGrid2D(numrows, numcols, initial){//generamos un array bidimensional
    var arr = [];
@@ -69,11 +73,40 @@ function createGrid2D(numrows, numcols, initial){//generamos un array bidimensio
     }
     return arr;
 }
-*/
-var grid = createGrid2D(10,10,0);
+
+
+
+
 
 function moveForward(rover){
+	if (rover.direction === "N"){
+			rover.x = rover.x - 1;
+			rover.position.splice(0,1, rover.x);
+			rover.position.splice(1,1, rover.y);
 
-function moveForward(rover){
+			console.log(rover.x + ", " + rover.y);
+
+	} else if (rover.direction === "E"){
+			rover.y = rover.y + 1;
+			rover.position.splice(0,1, rover.x);
+			rover.position.splice(1,1, rover.y);
+
+			console.log(rover.x + ", " + rover.y);
+
+	} else if (rover.direction === "S"){
+			rover.x = rover.x + 1;
+			rover.position.splice(0,1, rover.x);
+			rover.position.splice(1,1, rover.y);
+
+			console.log(rover.x + ", " + rover.y);
+
+	} else if (rover.direction === "W"){
+			rover.y = rover.y - 1;
+			rover.position.splice(0,1, rover.x);
+			rover.position.splice(1,1, rover.y);
+
+			console.log(rover.x + ", " + rover.y);
+
+	}
   console.log("moveForward was called")
 }
