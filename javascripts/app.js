@@ -3,20 +3,7 @@
 var rover = {
 	direction : "N"
 }
-// function createGrid(){
-// 	for (var y = 0; y <=9; y++){
-// 		for (var x = 0; x <=9; x++){
-// 		console.log(y + "-" + x)
-// 		}
-// 	}
-// }
-var grid = function () {
-   for (var x = 0; x <=9; x++) {
-      for (var y = 0; y <=9; y++){
-      	console.log(y + "-" + x)
-       }
-   }
-}
+
 // ======================
 function turnLeft(rover){
 	switch(rover.direction) {
@@ -65,6 +52,23 @@ var newGrid = [ 				[0,0],[0,1],[0,2],[0,3],[0,4],[0,5],[0,6],[0,7],[0,8],[0,9],
 								[8,0],[8,1],[8,2],[8,3],[8,4],[8,5],[8,6],[8,7],[8,8],[8,9],
 								[9,0],[9,1],[9,2],[9,3],[9,4],[9,5],[9,6],[9,7],[9,8],[9,9],
 							]	
+
+//Funcion para crear Grid
+/*
+
+function createGrid2D(numrows, numcols, initial){//generamos un array bidimensional
+   var arr = [];
+   for (var i = 0; i < numrows; ++i){
+      var columns = [];
+      for (var x = 0; x < numcols; ++x){
+         columns[x] = "["+i+","+x+"]"; // si quisiera el valor incial solo sustituir por initial
+      }
+      arr[i] = columns;
+    }
+    return arr;
+}
+*/
+var grid = createGrid2D(10,10,0);
 
 function moveForward(rover){
 
