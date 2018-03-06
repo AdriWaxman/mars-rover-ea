@@ -4,7 +4,8 @@ var rover = {
 	direction : "N",
 	x : 0,
 	y : 0,
-	position : [0,0]
+	position : [0,0],
+	travelLog : []
 }
 
 // =======2 iteracion=======
@@ -23,7 +24,7 @@ function turnLeft(rover){
 		rover.direction = "N";
 		break;
 	}
-  console.log("turnLeft was called!");
+  console.log("turnLeft was called! and the new directon is: " + rover.direction);
 }
 
 function turnRight(rover){
@@ -41,7 +42,7 @@ function turnRight(rover){
 		rover.direction = "N";
 		break;
 	}
-  console.log("turnRight was called!");
+  console.log("turnLeft was called! and the new directon is: " + rover.direction);
 }
 
 // =======3 iteracion=======
@@ -114,8 +115,14 @@ function moveForward(rover){
 //Iteracion 4
 function command(order){
 	for(i = 0; i <= order.length; i++){
-		if(order[i]=="f"){moveForward(rover);}
-				else if(order[i]=="l"){turnLeft(rover);}
-				else if(order[i]=="r"){turnRight(rover);}
+			if(order[i]=="f"){
+				moveForward(rover);
+			} else if(order[i]=="l"){
+				turnLeft(rover);
+			} else if(order[i]=="r"){
+				turnRight(rover);
+			} else {
+				console.log("The order is invalid!")
+			}
 		}
 }
