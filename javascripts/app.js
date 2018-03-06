@@ -84,45 +84,45 @@ function moveForward(rover){
 			rover.x = rover.x - 1;
 			rover.position.splice(0,1, rover.x);
 			rover.position.splice(1,1, rover.y);
-
+			rover.travelLog.push([rover.x, rover.y]);
 			//console.log(rover.x + ", " + rover.y);
 
 	} else if (rover.direction === "E"){
 			rover.y = rover.y + 1;
 			rover.position.splice(0,1, rover.x);
 			rover.position.splice(1,1, rover.y);
-
+			rover.travelLog.push([rover.x, rover.y]);
 			//console.log(rover.x + ", " + rover.y);
 
 	} else if (rover.direction === "S"){
 			rover.x = rover.x + 1;
 			rover.position.splice(0,1, rover.x);
 			rover.position.splice(1,1, rover.y);
-
+			rover.travelLog.push([rover.x, rover.y]);
 			//console.log(rover.x + ", " + rover.y);
 
 	} else if (rover.direction === "W"){
 			rover.y = rover.y - 1;
 			rover.position.splice(0,1, rover.x);
 			rover.position.splice(1,1, rover.y);
-
+			rover.travelLog.push([rover.x, rover.y]);
 			//console.log(rover.x + ", " + rover.y);
 
-	}
+	} 
   console.log("moveForward was called")
 }
 
 //Iteracion 4
 function command(order){
 	for(i = 0; i <= order.length; i++){
-			if(order[i]=="f"){
+			if(order[i]==="f"){
 				moveForward(rover);
-			} else if(order[i]=="l"){
+			} else if(order[i]==="l"){
 				turnLeft(rover);
-			} else if(order[i]=="r"){
+			} else if(order[i]==="r"){
 				turnRight(rover);
 			} else {
-				console.log("The order is invalid!")
+				return "The order is invalid!";
 			}
 		}
 }
